@@ -1,1 +1,254 @@
 /* You can add global styles to this file, and also import other style files */
+/* =========================
+   SpinVault - Global Styles
+   (dark + magenta accent)
+   ========================= */
+
+/* 1) Design tokens (cores, tipografia, espaçamento) */
+:root {
+  /* Colors */
+  --bg: #121212;
+  --surface: #1e1e1e;
+  --surface-2: #252525;
+  --border: rgba(255, 255, 255, 0.10);
+
+  --text: rgba(255, 255, 255, 0.92);
+  --text-muted: rgba(255, 255, 255, 0.68);
+  --text-faint: rgba(255, 255, 255, 0.50);
+
+  /* Accent (magenta / red) */
+  --accent: #e11d48;       /* main */
+  --accent-2: #ff2d55;     /* highlight */
+  --accent-soft: rgba(225, 29, 72, 0.18);
+
+  /* Feedback */
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+
+  /* Typography */
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --text-xs: 0.75rem;   /* 12px */
+  --text-sm: 0.875rem;  /* 14px */
+  --text-md: 1rem;      /* 16px */
+  --text-lg: 1.125rem;  /* 18px */
+  --text-xl: 1.25rem;   /* 20px */
+  --text-2xl: 1.5rem;   /* 24px */
+
+  --line: 1.5;
+
+  /* Spacing scale */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 20px;
+  --s-6: 24px;
+  --s-8: 32px;
+  --s-10: 40px;
+  --s-12: 48px;
+
+  /* Radius + shadow */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  --shadow-sm: 0 6px 18px rgba(0, 0, 0, 0.22);
+  --shadow-md: 0 12px 28px rgba(0, 0, 0, 0.28);
+
+  /* Layout */
+  --container-max: 1100px;
+  --container-pad: 16px;
+
+  /* Transitions */
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --t-fast: 120ms var(--ease);
+  --t-mid: 200ms var(--ease);
+
+  /* Focus ring */
+  --ring: 0 0 0 3px var(--accent-soft);
+}
+
+/* 2) Reset básico */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  font-family: var(--font-sans);
+  font-size: var(--text-md);
+  line-height: var(--line);
+
+  background: var(--bg);
+  color: var(--text);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  height: 100%;
+}
+
+/* 3) Tipografia global (sem classes específicas) */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 var(--s-3);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: clamp(1.6rem, 2.2vw, 2.1rem); }
+h2 { font-size: clamp(1.3rem, 1.8vw, 1.7rem); }
+h3 { font-size: clamp(1.1rem, 1.5vw, 1.3rem); }
+
+p {
+  margin: 0 0 var(--s-4);
+  color: var(--text);
+}
+
+small {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
+
+/* Links com cor de destaque */
+a {
+  color: var(--accent-2);
+  text-decoration: none;
+  transition: opacity var(--t-fast);
+}
+a:hover { opacity: 0.85; }
+a:focus-visible {
+  outline: none;
+  box-shadow: var(--ring);
+  border-radius: 6px;
+}
+
+/* 4) Elementos de formulário (base global) */
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+
+  padding: 10px 12px;
+  outline: none;
+
+  transition: border-color var(--t-fast), box-shadow var(--t-fast), background var(--t-fast);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-faint);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: rgba(255, 45, 85, 0.55);
+  box-shadow: var(--ring);
+}
+
+/* Botão base */
+button {
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+
+  transition: transform var(--t-fast), opacity var(--t-fast), border-color var(--t-fast), box-shadow var(--t-fast);
+}
+
+button:hover { opacity: 0.92; }
+button:active { transform: translateY(1px); }
+button:focus-visible {
+  outline: none;
+  box-shadow: var(--ring);
+}
+
+/* 5) Imagens e mídias */
+img, video {
+  max-width: 100%;
+  display: block;
+}
+
+/* 6) Scrollbar (opcional, mas deixa bonito no Windows/Chrome) */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #0e0e0e; }
+::-webkit-scrollbar-thumb {
+  background: #2b2b2b;
+  border-radius: 999px;
+  border: 2px solid #0e0e0e;
+}
+::-webkit-scrollbar-thumb:hover { background: #3a3a3a; }
+
+/* 7) Container global (sem amarrar em componente)
+   Você pode usar <div class="container"> em qualquer tela.
+*/
+.container {
+  width: min(var(--container-max), 100%);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+}
+
+/* 8) Breakpoints (padrões: mobile -> desktop) */
+/* Mobile first (padrão) */
+
+/* Tablet (>= 768px) */
+@media (min-width: 768px) {
+  :root {
+    --container-pad: 24px;
+  }
+
+  body {
+    font-size: 1.02rem;
+  }
+}
+
+/* Desktop (>= 1024px) */
+@media (min-width: 1024px) {
+  :root {
+    --container-pad: 28px;
+  }
+}
+
+/* Large screens (>= 1280px) */
+@media (min-width: 1280px) {
+  :root {
+    --container-max: 1180px;
+  }
+}
+
+/* 9) Acessibilidade: reduzir animações */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

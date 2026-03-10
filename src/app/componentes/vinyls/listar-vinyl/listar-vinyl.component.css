@@ -1,0 +1,72 @@
+.vinyl-list {
+  padding: 60px 0;
+}
+
+.vinyl-list h2 {
+  margin-bottom: 24px;
+}
+
+.vinyl-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.vinyl-card {
+  background: #1e1e1e;
+  border: 1px solid #2f2f2f;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.vinyl-card:hover {
+  transform: translateY(-4px);
+  border-color: #e11d48;
+}
+
+.vinyl-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.vinyl-info {
+  padding: 16px;
+}
+
+.vinyl-info h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.vinyl-info .artist {
+  color: #d1d1d1;
+  margin: 0 0 4px;
+}
+
+.vinyl-info .year {
+  color: #888;
+  font-size: 14px;
+}
+.without-vinyl {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.without-vinyl p {
+  font-size: 1.2rem;
+  color: #e11d48;
+  background: rgba(225, 29, 72, 0.1);
+  padding: 16px 28px;
+  border-radius: 10px;
+  border: 1px dashed #e11d48;
+  text-align: center;
+}
+
+.ff-inter {
+  font-family: "Inter", sans-serif;
+}

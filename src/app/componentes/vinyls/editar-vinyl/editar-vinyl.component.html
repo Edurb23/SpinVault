@@ -1,0 +1,69 @@
+<div class="modal-backdrop">
+  <div class="edit-modal">
+    <div class="modal-header">
+      <div>
+        <p class="modal-label">Update record</p>
+        <h3>Edit vinyl</h3>
+      </div>
+
+      <button type="button" class="btn-close" (click)="cancelar()">✕</button>
+    </div>
+
+    <div class="edit-cover-preview">
+      <img [src]="vinil.photo" [alt]="vinil.name">
+    </div>
+
+    <form class="edit-form">
+      <div class="form-group">
+        <label for="edit-name">Album name</label>
+        <input
+          id="edit-name"
+          name="name"
+          type="text"
+          [(ngModel)]="vinil.name"
+          placeholder="Enter album name"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="edit-artist">Artist</label>
+        <input
+          id="edit-artist"
+          name="artist"
+          type="text"
+          [(ngModel)]="vinil.artist"
+          placeholder="Enter artist name"
+        >
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="edit-year">Release year</label>
+          <input
+            id="edit-year"
+            name="year"
+            type="number"
+            [(ngModel)]="vinil.year"
+            placeholder="e.g. 2013"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="edit-photo">Cover URL</label>
+          <input
+            id="edit-photo"
+            name="photo"
+            type="text"
+            [(ngModel)]="vinil.photo"
+            placeholder="https://..."
+          >
+        </div>
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" class="btn-cancel" (click)="cancelar()">Cancel</button>
+        <button type="submit" class="btn-save" (click)="editarVinyl()">Save changes</button>
+      </div>
+    </form>
+  </div>
+</div>

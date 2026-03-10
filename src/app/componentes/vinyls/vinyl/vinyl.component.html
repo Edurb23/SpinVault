@@ -1,0 +1,17 @@
+<div class="vinyl-card" [ngClass]="getAlbumClass(vinil.year)">
+  <div class="vinyl-cover">
+    <img [src]="vinil.photo" [alt]="vinil.name">
+    <div class="vinyl-disc"></div>
+  </div>
+
+  <div class="vinyl-info">
+    <h3>{{ vinil.name }}</h3>
+    <p class="artist">{{ vinil.artist }}</p>
+    <p class="year">{{ vinil.year }}</p>
+  </div>
+
+  <div class="vinyl-actions">
+    <button type="button" class="btn-action btn-edit" routerLink="editarVinyl/{{vinil.id}}">Edit</button>
+    <button type="button" class="btn-action btn-delete" routerLink="excluirVinyl/{{vinil.id}}">Delete</button>
+  </div>
+</div>

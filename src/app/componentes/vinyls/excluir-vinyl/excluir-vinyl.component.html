@@ -1,0 +1,20 @@
+<div class="modal-backdrop">
+  <div class="delete-modal">
+    <div class="modal-icon">
+      !
+    </div>
+
+    <div class="modal-content">
+      <h3>Delete vinyl</h3>
+      <p>
+        Are you sure you want to delete
+        <span>"{{ vinil.name }}"</span> from your collection?
+      </p>
+    </div>
+
+    <div class="modal-actions">
+      <button type="button" class="btn-cancel" (click)="cancelar()">Cancel</button>
+      <button type="button" class="btn-confirm" (click)="excluirVinil()">Delete</button>
+    </div>
+  </div>
+</div>

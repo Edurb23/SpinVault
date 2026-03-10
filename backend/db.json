@@ -1,0 +1,88 @@
+{
+  "vinyls": [
+    {
+      "id": 1,
+      "name": "Dark Side of the Moon",
+      "artist": "Pink Floyd",
+      "year": 1973,
+      "photo": "https://upload.wikimedia.org/wikipedia/en/3/3b/Dark_Side_of_the_Moon.png"
+    },
+    {
+      "id": 2,
+      "name": "Discovery",
+      "artist": "Daft Punk",
+      "year": 2001,
+      "photo": "https://imusic.b-cdn.net/images/item/original/424/0190296610424.jpg?daft-punk-2021-discovery-cd&class=scaled&v=1629745236"
+    },
+    {
+      "id": 3,
+      "name": "Nevermind",
+      "artist": "Nirvana",
+      "year": 1991,
+      "photo": "https://upload.wikimedia.org/wikipedia/en/b/b7/NirvanaNevermindalbumcover.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Random Access Memories",
+      "artist": "Daft Punk",
+      "year": 2013,
+      "photo": "https://imusic.b-cdn.net/images/item/original/625/0888837168625.jpg?daft-punk-2013-random-access-memories-cd&class=scaled&v=1366619172"
+    },
+    {
+      "id": 5,
+      "name": "To Pimp a Butterfly",
+      "artist": "Kendrick Lamar",
+      "year": 2015,
+      "photo": "https://imusic.b-cdn.net/images/item/original/683/0602547300683.jpg?kendrick-lamar-2015-to-pimp-a-butterfly-cd&class=scaled&v=1429720360"
+    },
+    {
+      "id": 6,
+      "name": "Currents",
+      "artist": "Tame Impala",
+      "year": 2015,
+      "photo": "https://imusic.b-cdn.net/images/item/original/472/0602547782472.jpg?tame-impala-2016-currents-cd&class=scaled&v=1578668846"
+    },
+    {
+      "id": 7,
+      "name": "Back to Black",
+      "artist": "Amy Winehouse",
+      "year": 2006,
+      "photo": "https://imusic.b-cdn.net/images/item/original/114/0602517142114.jpg?amy-winehouse-2006-back-to-black-cd&class=scaled&v=1167101057"
+    },
+    {
+      "name": "Ruby",
+      "artist": "JENNIE",
+      "year": 2025,
+      "photo": "https://upload.wikimedia.org/wikipedia/pt/f/fc/Jennie_%E2%80%93_Ruby.jpg",
+      "id": 9
+    },
+    {
+      "name": "Alter Ego",
+      "artist": "LISA",
+      "year": 2025,
+      "photo": "data:image/jpeg;base64,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",
+      "id": 10
+    },
+    {
+      "name": "Positions",
+      "artist": "Ariana Grande ",
+      "year": 2020,
+      "photo": "https://imusic.b-cdn.net/images/item/original/633/0602435365633.jpg?ariana-grande-positions-cd&class=scaled&v=1640598192",
+      "id": 11
+    },
+    {
+      "name": "Eternal Sunshine",
+      "artist": "Ariana Grande ",
+      "year": 2025,
+      "photo": "https://imusic.b-cdn.net/images/item/original/131/4988031635131.jpg?ariana-grande-2024-eternal-sunshine-cd&class=scaled&v=1709206841",
+      "id": 12
+    },
+    {
+      "name": "Fancy That",
+      "artist": "PinkPantheress",
+      "year": 2025,
+      "photo": "https://imusic.b-cdn.net/images/item/original/706/5021732610706.jpg?pinkpantheress-2025-fancy-that-cd&class=scaled&v=1744728262",
+      "id": 13
+    }
+  ]
+}

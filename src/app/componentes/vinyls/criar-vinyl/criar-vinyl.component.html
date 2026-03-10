@@ -1,0 +1,48 @@
+<main class="main">
+  <div class="container">
+    <div class="form-wrapper">
+      <h2>Add a vinyl</h2>
+      <p>Save a new record to your collection.</p>
+
+      <form class="form-vinyl" (ngSubmit)="criarVinyl()">
+        <label for="name">Name</label>
+        <input
+          id="name"
+          name="name"
+          type="text"
+          placeholder="e.g. Dark Side of the Moon"
+          [(ngModel)]="vinyl.name"
+        />
+
+        <label for="photo">Photo (URL)</label>
+        <input
+          id="photo"
+          name="photo"
+          type="text"
+          placeholder="e.g. https://..."
+          [(ngModel)]="vinyl.photo"
+        />
+
+        <label for="artist">Artist</label>
+        <input
+          id="artist"
+          name="artist"
+          type="text"
+          placeholder="e.g. Pink Floyd"
+          [(ngModel)]="vinyl.artist"
+        />
+
+        <label for="year">Release Year</label>
+        <input
+          id="year"
+          name="year"
+          type="number"
+          placeholder="e.g. 1973"
+          [(ngModel)]="vinyl.year"
+        />
+
+        <button type="submit">Save</button>
+      </form>
+    </div>
+  </div>
+</main>

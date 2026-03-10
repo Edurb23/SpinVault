@@ -1,0 +1,60 @@
+
+.form-vinyl {
+  background: #1e1e1e;
+  border: 1px solid #2f2f2f;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 520px;
+   margin: 30px auto 0 auto;
+}
+
+.form-vinyl label {
+  display: block;
+  font-size: 14px;
+  color: #d1d1d1;
+  margin: 12px 0 6px;
+}
+
+.form-vinyl input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #2f2f2f;
+  background: #121212;
+  color: #ffffff;
+}
+
+.form-vinyl input:focus {
+  outline: none;
+  border-color: #e11d48;
+}
+
+.form-vinyl button {
+  margin-top: 16px;
+  width: 100%;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  background: #e11d48;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.form-vinyl button:hover {
+  opacity: 0.9;
+}
+
+.form-wrapper {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.form-wrapper h2 {
+  margin-top: 5%;
+  margin-bottom: 8px;
+}
+
+.form-wrapper p {
+  margin-bottom: 20px;
+  color: #d1d1d1;
+}

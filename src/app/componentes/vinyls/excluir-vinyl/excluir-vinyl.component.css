@@ -1,0 +1,123 @@
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 999;
+  animation: fade-in 0.25s ease;
+}
+
+.delete-modal {
+  width: 100%;
+  max-width: 440px;
+  background: linear-gradient(180deg, #18181c 0%, #111115 100%);
+  border: 1px solid rgba(255, 45, 85, 0.18);
+  border-radius: 22px;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    0 0 24px rgba(255, 45, 85, 0.08);
+  padding: 28px 24px 22px;
+  animation: modal-in 0.28s ease;
+}
+
+.modal-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, rgba(255, 45, 85, 0.22) 0%, rgba(255, 45, 85, 0.08) 70%);
+  border: 1px solid rgba(255, 45, 85, 0.28);
+  color: #ff4d73;
+  font-size: 1.5rem;
+  font-weight: 800;
+  box-shadow: 0 0 18px rgba(255, 45, 85, 0.14);
+}
+
+.modal-content {
+  text-align: center;
+}
+
+.modal-content h3 {
+  margin: 0 0 10px;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.modal-content p {
+  margin: 0;
+  color: #b8b8c2;
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+.modal-content p span {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.modal-actions button {
+  flex: 1;
+  height: 46px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-cancel {
+  background: linear-gradient(180deg, #2a2a31 0%, #202028 100%);
+  border: 1px solid #3c3c47;
+  color: #ffffff;
+}
+
+.btn-cancel:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(180deg, #33333d 0%, #26262f 100%);
+}
+
+.btn-confirm {
+  background: linear-gradient(90deg, #c1123f 0%, #ff2d55 100%);
+  border: 1px solid rgba(255, 45, 85, 0.4);
+  color: #ffffff;
+  box-shadow: 0 0 16px rgba(255, 45, 85, 0.18);
+}
+
+.btn-confirm:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 22px rgba(255, 45, 85, 0.28);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

@@ -1,0 +1,22 @@
+<section class="vinyl-list">
+  <div class="container">
+    <h2>Your Collection</h2>
+
+    <div class="vinyl-grid" *ngIf="listaVinil.length > 0; else semVinyl">
+
+      <div *ngFor="let vinyl of listaVinil">
+
+        <app-vinyl [vinil]="vinyl"></app-vinyl>
+
+      </div>
+    </div>
+  </div>
+</section>
+<ng-template #semVinyl >
+    <div class="without-vinyl">
+      <p>
+       Ainda não tem vinis
+      </p>
+    </div>
+
+</ng-template>
