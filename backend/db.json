@@ -83,6 +83,20 @@
       "year": 2025,
       "photo": "https://imusic.b-cdn.net/images/item/original/706/5021732610706.jpg?pinkpantheress-2025-fancy-that-cd&class=scaled&v=1744728262",
       "id": 13
+    },
+    {
+      "id": 14,
+      "name": "Bad Bunny Un Verano Sin Ti",
+      "artist": "Bad Bunny",
+      "year": 2024,
+      "photo": "https://akamai.sscdn.co/uploadfile/letras/albuns/5/6/f/a/01651790913.jpg"
+    },
+    {
+      "id": 15,
+      "name": "Hit me Hard and Soft",
+      "artist": "Billie Eillish",
+      "year": 2024,
+      "photo": "https://akamai.sscdn.co/uploadfile/letras/albuns/8/6/5/7/2222671715859477.jpg"
     }
   ]
 }
