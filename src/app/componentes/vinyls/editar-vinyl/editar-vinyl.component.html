@@ -10,17 +10,16 @@
     </div>
 
     <div class="edit-cover-preview">
-      <img [src]="vinil.photo" [alt]="vinil.name">
+      <img [src]="vinyl.value.photo" [alt]="vinyl.value.name">
     </div>
 
-    <form class="edit-form">
+    <form class="edit-form" [formGroup]="vinyl">
       <div class="form-group">
         <label for="edit-name">Album name</label>
         <input
           id="edit-name"
-          name="name"
+          formControlName="name"
           type="text"
-          [(ngModel)]="vinil.name"
           placeholder="Enter album name"
         >
       </div>
@@ -29,9 +28,8 @@
         <label for="edit-artist">Artist</label>
         <input
           id="edit-artist"
-          name="artist"
+          formControlName="artist"
           type="text"
-          [(ngModel)]="vinil.artist"
           placeholder="Enter artist name"
         >
       </div>
@@ -41,10 +39,8 @@
           <label for="edit-year">Release year</label>
           <input
             id="edit-year"
-            name="year"
+            formControlName="year"
             type="number"
-            [(ngModel)]="vinil.year"
-            placeholder="e.g. 2013"
           >
         </div>
 
@@ -52,10 +48,8 @@
           <label for="edit-photo">Cover URL</label>
           <input
             id="edit-photo"
-            name="photo"
+            formControlName="photo"
             type="text"
-            [(ngModel)]="vinil.photo"
-            placeholder="https://..."
           >
         </div>
       </div>
