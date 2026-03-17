@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { VinylService } from '../vinyl.service';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-criar-vinyl',
@@ -9,23 +10,27 @@ import { Router } from '@angular/router';
 })
 export class CriarVinylComponent implements OnInit {
 
-   vinyl = {
-    name: '',
-    artist: '',
-    year: 0,
-    photo:''
-   }
+
+   formulario!: FormGroup;
 
 
 
-  constructor(private service: VinylService, private router: Router ) { }
+  constructor(private service: VinylService, private router: Router, private formBuilder: FormBuilder ) { }
 
   ngOnInit(): void {
+
+    this.formulario = this.formBuilder.group({
+      name: ['formulario reativo'],
+      artist: [''],
+      year: [0],
+      photo: ['']
+
+    })
 
   }
 
   criarVinyl(){
-    this.service.criar(this.vinyl).subscribe(() => {
+    this.service.criar(this.formulario.value).subscribe(() => {
       this.router.navigate([''])
     })
   }
