@@ -184,6 +184,17 @@ button {
 
   transition: transform var(--t-fast), opacity var(--t-fast), border-color var(--t-fast), box-shadow var(--t-fast);
 }
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+  border-color: #444;
+}
+button:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(255, 45, 85, 0.2);
+}
 
 button:hover { opacity: 0.92; }
 button:active { transform: translateY(1px); }

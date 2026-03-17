@@ -169,6 +169,16 @@
   box-shadow: 0 0 24px rgba(255, 45, 85, 0.26);
 }
 
+.mensagem__error {
+  margin-top: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #ff5f80;
+  padding: 6px 10px;
+  display: inline-block;
+  animation: fadeError 0.25s ease;
+}
+
 @keyframes fade-in {
   from {
     opacity: 0;

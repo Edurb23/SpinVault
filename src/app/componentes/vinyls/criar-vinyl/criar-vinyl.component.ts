@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { VinylService } from '../vinyl.service';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-criar-vinyl',
@@ -11,7 +11,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class CriarVinylComponent implements OnInit {
 
 
-   formulario!: FormGroup;
+   vinil!: FormGroup;
 
 
 
@@ -19,20 +19,49 @@ export class CriarVinylComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.formulario = this.formBuilder.group({
-      name: ['formulario reativo'],
-      artist: [''],
-      year: [0],
-      photo: ['']
+    this.vinil = this.formBuilder.group({
+      name: ['', Validators.compose([
+          Validators.required,
+          Validators.pattern(/(.|\s)*\S(.|\s)*/),
+          Validators.minLength(2)
+      ])],
+      artist: ['', Validators.compose([
+          Validators.required,
+          Validators.minLength(2),
+          Validators.pattern(/(.|\s)*\S(.|\s)*/),
+      ])],
+      year: [null, Validators.compose([
+          Validators.required,
+          Validators.min(1948),
+          Validators.max(new Date().getFullYear()),
+          Validators.pattern(/^\d{4}$/)
+      ])],
+      photo: ['',  Validators.compose([
+          Validators.required,
+          Validators.pattern(/^(https?:\/\/)[^\s$.?#].[^\s]*$/)
+  ])]
 
     })
 
   }
 
   criarVinyl(){
-    this.service.criar(this.formulario.value).subscribe(() => {
-      this.router.navigate([''])
-    })
+    if(this.vinil.valid){
+      this.service.criar(this.vinil.value).subscribe(() => {
+        this.router.navigate([''])
+      })
+    }else{
+      alert("Preecha todos os campos")
+    }
   }
+
+    habilitarButton(): string{
+      if(this.vinil.valid){
+        return 'button'
+      }else{
+        return 'button__disabled'
+      }
+    }
+
 
 }

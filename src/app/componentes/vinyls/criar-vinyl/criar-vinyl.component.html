@@ -4,7 +4,11 @@
       <h2>Add a vinyl</h2>
       <p>Save a new record to your collection.</p>
 
-      <form class="form-vinyl" [formGroup]="formulario" (ngSubmit)="criarVinyl()">
+      <form
+        class="form-vinyl"
+        [formGroup]="vinil"
+        (ngSubmit)="criarVinyl()"
+      >
         <label for="name">Name</label>
         <input
           id="name"
@@ -12,7 +16,33 @@
           type="text"
           placeholder="e.g. Dark Side of the Moon"
         />
-
+        <div
+          class="mensagem__error"
+          *ngIf="
+            vinil.get('name')?.errors?.['required'] &&
+            vinil.get('name')?.touched
+          "
+        >
+          Album name is required
+        </div>
+        <div
+          class="mensagem__error"
+          *ngIf="
+            vinil.get('name')?.errors?.['pattern'] &&
+            vinil.get('name')?.touched
+          "
+        >
+          Album name cannot be empty or contain only spaces
+        </div>
+        <div
+          class="mensagem__error"
+          *ngIf="
+            vinil.get('name')?.errors?.['minlength'] &&
+            vinil.get('name')?.touched
+          "
+        >
+          Album name must be at least 2 characters
+        </div>
         <label for="photo">Photo (URL)</label>
         <input
           id="photo"
@@ -20,6 +50,24 @@
           type="text"
           placeholder="e.g. https://..."
         />
+        <div
+          class="mensagem__error"
+          *ngIf="
+            vinil.get('photo')?.errors?.['required'] &&
+            vinil.get('photo')?.touched
+          "
+        >
+          Cover image URL is required
+        </div>
+        <div
+          class="mensagem__error"
+          *ngIf="
+            vinil.get('photo')?.errors?.['pattern'] &&
+            vinil.get('photo')?.touched
+          "
+        >
+          Please enter a valid URL starting with http:// or https://
+        </div>
 
         <label for="artist">Artist</label>
         <input
@@ -28,7 +76,33 @@
           type="text"
           placeholder="e.g. Pink Floyd"
         />
-
+        <div
+          class="mensagem__error"
+          *ngIf="
+            vinil.get('artist')?.errors?.['required'] &&
+            vinil.get('artist')?.touched
+          "
+        >
+          Artist or band name is required
+        </div>
+        <div
+          class="mensagem__error"
+          *ngIf="
+            vinil.get('artist')?.errors?.['minlength'] &&
+            vinil.get('artist')?.touched
+          "
+        >
+          Artist or band name must be at least 2 characters
+        </div>
+         <div
+          class="mensagem__error"
+          *ngIf="
+            vinil.get('artist')?.errors?.['pattern'] &&
+            vinil.get('artist')?.touched
+          "
+        >
+          Artist or band name  cannot be empty or contain only spaces
+        </div>
         <label for="year">Release Year</label>
         <input
           id="year"
@@ -36,8 +110,44 @@
           type="number"
           placeholder="e.g. 1973"
         />
+        <div
+          class="mensagem__error"
+          *ngIf="
+            vinil.get('year')?.errors?.['required'] &&
+            vinil.get('year')?.touched
+          "
+        >
+          Release year is required
+        </div>
+        <div
+          class="mensagem__error"
+          *ngIf="
+            vinil.get('year')?.errors?.['min'] &&
+            vinil.get('year')?.touched
+          "
+        >
+          Release year must be 1948 or later
+        </div>
+        <div
+          class="mensagem__error"
+          *ngIf="
+            vinil.get('year')?.errors?.['max'] &&
+            vinil.get('year')?.touched
+          "
+        >
+          Release year cannot be in the future
+        </div>
+        <div
+          class="mensagem__error"
+          *ngIf="
+            vinil.get('year')?.errors?.['pattern'] &&
+            vinil.get('year')?.touched
+          "
+        >
+          Release year must have 4 digits
+        </div>
 
-        <button type="submit">Save</button>
+        <button type="submit" [disabled]="!vinil.valid" [ngClass]="habilitarButton()">Save</button>
       </form>
     </div>
   </div>

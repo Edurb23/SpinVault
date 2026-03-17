@@ -32,6 +32,33 @@
           type="text"
           placeholder="Enter artist name"
         >
+        <div
+          class="mensagem__error"
+          *ngIf="
+            vinyl.get('artist')?.errors?.['required'] &&
+            vinyl.get('artist')?.touched
+          "
+        >
+          Artist or band name is required
+        </div>
+        <div
+          class="mensagem__error"
+          *ngIf="
+            vinyl.get('artist')?.errors?.['minlength'] &&
+            vinyl.get('artist')?.touched
+          "
+        >
+          Artist or band name must be at least 2 characters
+        </div>
+         <div
+          class="mensagem__error"
+          *ngIf="
+            vinyl.get('artist')?.errors?.['pattern'] &&
+            vinyl.get('artist')?.touched
+          "
+        >
+          Artist or band name  cannot be empty or contain only spaces
+        </div>
       </div>
 
       <div class="form-row">
