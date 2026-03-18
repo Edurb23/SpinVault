@@ -1,61 +1,27 @@
 .center {
   display: flex;
   justify-content: center;
-  align-items: center;
   margin: 32px 0;
 }
 
 .btg-carregar-mais {
+  background: linear-gradient(90deg, #ff2d55, #e11d48);
+  color: white;
+  border: none;
+  border-radius: 12px;
   padding: 12px 24px;
-
-  border-radius: 10px;
-  background: #e11d48;
-  color:#f5f5f5;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(225, 29, 72, 0.25);
+  transition: 0.2s ease;
 }
 
 .btg-carregar-mais:hover {
-  transform: translateY(-2px);
-  border-color: #e11d48;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(225, 29, 72, 0.35);
 }
 
 .btg-carregar-mais:active {
   transform: scale(0.98);
-}
-
-.btg-carregar-mais:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-  transform: none;
-  box-shadow: none;
-}
-
-.mensagem-center {
-  text-align: center;
-  margin: 40px 0;
-  font-size: 18px;
-  color: #e11d48;
-}
-
-.ff-inter {
-  font-family: 'Inter', sans-serif;
-}
-
-
-.mensagem-center {
-  padding: 16px 24px;
-  border-radius: 10px;
-  display: inline-block;
-}
-
-ng-template + * .mensagem-center,
-.mensagem-center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: fit-content;
 }
