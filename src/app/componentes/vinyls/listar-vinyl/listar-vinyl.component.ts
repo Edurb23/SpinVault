@@ -8,14 +8,24 @@ import { Vinyl } from '../vinyl';
   styleUrls: ['./listar-vinyl.component.css'],
 })
 export class ListarVinylComponent implements OnInit {
-
   listaVinil: Vinyl[] = [];
+  paginaAtual: number = 1;
+  MoreVinil: boolean = true;
 
   constructor(private service: VinylService) {}
 
   ngOnInit(): void {
-    this.service.listar().subscribe((listaVinil) => {
-      this.listaVinil = listaVinil
-    })
+    this.service.listar(this.paginaAtual).subscribe((listaVinil) => {
+      this.listaVinil = listaVinil;
+    });
+  }
+
+  loadMoreVinil() {
+    this.service.listar(++this.paginaAtual).subscribe((listaVinil) => {
+      this.listaVinil.push(...listaVinil);
+      if (!listaVinil.length) {
+        this.MoreVinil = false;
+      }
+    });
   }
 }

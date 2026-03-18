@@ -12,6 +12,13 @@
     </div>
   </div>
 </section>
+
+<app-botao-carregar-mais
+    [MoreVinil]="MoreVinil"
+    (click)="loadMoreVinil()"
+    >
+
+</app-botao-carregar-mais>
 <ng-template #semVinyl >
     <div class="without-vinyl">
       <p>
