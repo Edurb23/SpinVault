@@ -11,6 +11,7 @@ export class ListarVinylComponent implements OnInit {
   listaVinil: Vinyl[] = [];
   paginaAtual: number = 1;
   MoreVinil: boolean = true;
+  filtro: string = ''
 
   constructor(private service: VinylService) {}
 
