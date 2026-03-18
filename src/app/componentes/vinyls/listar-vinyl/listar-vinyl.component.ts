@@ -11,21 +11,31 @@ export class ListarVinylComponent implements OnInit {
   listaVinil: Vinyl[] = [];
   paginaAtual: number = 1;
   MoreVinil: boolean = true;
+  filtro: string = ''
 
   constructor(private service: VinylService) {}
 
   ngOnInit(): void {
-    this.service.listar(this.paginaAtual).subscribe((listaVinil) => {
+    this.service.listar(this.paginaAtual, this.filtro).subscribe((listaVinil) => {
       this.listaVinil = listaVinil;
     });
   }
 
   loadMoreVinil() {
-    this.service.listar(++this.paginaAtual).subscribe((listaVinil) => {
+    this.service.listar(++this.paginaAtual, this.filtro).subscribe((listaVinil) => {
       this.listaVinil.push(...listaVinil);
       if (!listaVinil.length) {
         this.MoreVinil = false;
       }
     });
+  }
+
+  searchVinil(){
+
+    this.MoreVinil = true
+    this.paginaAtual = 1;
+    this.service.listar(this.paginaAtual, this.filtro).subscribe(listaVinil => {
+      this.listaVinil = listaVinil
+    })
   }
 }

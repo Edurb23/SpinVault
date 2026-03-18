@@ -16,7 +16,7 @@ export class VinylService {
 
 
 
-  listar(pagina: number): Observable<Vinyl[]>{
+  listar(pagina: number, filtro: string): Observable<Vinyl[]>{
 
 
     const vinilPorPagina: number = 8;
@@ -24,6 +24,10 @@ export class VinylService {
     let params = new HttpParams()
         .set("_page", pagina)
         .set("_limit",vinilPorPagina)
+
+    if(filtro.trim().length > 2){
+      params = params.set("q", filtro)
+    }
 
     return this.http
       .get<Vinyl[]>(this.API, {params})

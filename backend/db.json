@@ -97,6 +97,48 @@
       "artist": "Billie Eillish",
       "year": 2024,
       "photo": "https://akamai.sscdn.co/uploadfile/letras/albuns/8/6/5/7/2222671715859477.jpg"
+    },
+    {
+      "id": 16,
+      "name": "MUSIC",
+      "artist": "Playboi Carti",
+      "year": 2025,
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/2/22/Playboi_Carti_-_Music.png"
+    },
+    {
+      "name": "Die Lit",
+      "artist": "Playboi Carti",
+      "year": 2018,
+      "photo": "https://cdn-images.dzcdn.net/images/cover/f2d66b587ca8d3f0fa222c3501d23564/1900x1900-000000-80-0-0.jpg",
+      "id": 17
+    },
+    {
+      "name": "The Chronic",
+      "artist": "Dr.Dre",
+      "year": 1992,
+      "photo": "https://upload.wikimedia.org/wikipedia/pt/c/c7/The_Chronic.jpg",
+      "id": 18
+    },
+    {
+      "name": "Rummours",
+      "artist": "FleetWood Mac ",
+      "year": 1977,
+      "photo": "https://upload.wikimedia.org/wikipedia/en/f/fb/FMacRumours.PNG",
+      "id": 19
+    },
+    {
+      "name": "The College Dropout",
+      "artist": "Kanye West",
+      "year": 2004,
+      "photo": "https://upload.wikimedia.org/wikipedia/en/a/a3/Kanyewest_collegedropout.jpg",
+      "id": 20
+    },
+    {
+      "name": "Graduation",
+      "artist": "Kanye West",
+      "year": 2007,
+      "photo": "https://m.media-amazon.com/images/I/61Jr-rvLUDL._AC_UF1000,1000_QL80_.jpg",
+      "id": 21
     }
   ]
 }
