@@ -9,9 +9,8 @@
       autofocus
       placeholder="Search vinyl..."
       [(ngModel)]="filtro"
+      (keyup)="searchVinil()"
       />
-
-      <button class="search-button">buscar</button>
     </div>
 
     <div class="vinyl-grid" *ngIf="listaVinil.length > 0; else semVinyl">
