@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient, HttpParams } from '@angular/common/http'
 import { Vinyl } from './vinyl';
 import { Observable } from 'rxjs';
 
@@ -14,8 +14,19 @@ export class VinylService {
 
   constructor( private http: HttpClient) { }
 
-  listar(): Observable<Vinyl[]>{
-    return this.http.get<Vinyl[]>(this.API)
+
+
+  listar(pagina: number): Observable<Vinyl[]>{
+
+
+    const vinilPorPagina: number = 8;
+
+    let params = new HttpParams()
+        .set("_page", pagina)
+        .set("_limit",vinilPorPagina)
+
+    return this.http
+      .get<Vinyl[]>(this.API, {params})
   }
 
   criar(vinyl: Vinyl): Observable<Vinyl>{

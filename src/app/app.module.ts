@@ -13,6 +13,7 @@ import { VinylComponent } from './componentes/vinyls/vinyl/vinyl.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ExcluirVinylComponent } from './componentes/vinyls/excluir-vinyl/excluir-vinyl.component';
 import { EditarVinylComponent } from './componentes/vinyls/editar-vinyl/editar-vinyl.component';
+import { BotaoCarregarMaisComponent } from './componentes/vinyls/listar-vinyl/botao-carregar-mais/botao-carregar-mais.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { EditarVinylComponent } from './componentes/vinyls/editar-vinyl/editar-v
     ListarVinylComponent,
     VinylComponent,
     ExcluirVinylComponent,
-    EditarVinylComponent
+    EditarVinylComponent,
+    BotaoCarregarMaisComponent,
   ],
   imports: [
     BrowserModule,

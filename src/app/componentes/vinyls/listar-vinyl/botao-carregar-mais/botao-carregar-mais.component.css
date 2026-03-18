@@ -1,0 +1,27 @@
+.center {
+  display: flex;
+  justify-content: center;
+  margin: 32px 0;
+}
+
+.btg-carregar-mais {
+  background: linear-gradient(90deg, #ff2d55, #e11d48);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(225, 29, 72, 0.25);
+  transition: 0.2s ease;
+}
+
+.btg-carregar-mais:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(225, 29, 72, 0.35);
+}
+
+.btg-carregar-mais:active {
+  transform: scale(0.98);
+}

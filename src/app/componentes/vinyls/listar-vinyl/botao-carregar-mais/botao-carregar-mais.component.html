@@ -1,0 +1,6 @@
+<div class="center" *ngIf="MoreVinil; else noMoreVinil">
+  <button class="btg-carregar-mais">Carregar mais</button>
+</div>
+<ng-template #noMoreVinil>
+    <p class="mensagem-center ff-inter"> Dont have more Vinil</p>
+</ng-template>
